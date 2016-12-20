@@ -8,7 +8,7 @@
 	<script src="js/browser.min.js"></script>
 </head>
 <body>
-	<div id="example2"></div>
+	<div id="example1"></div>
 	<script type="text/babel">
 		var name = ['kitty','mary','king'];
 		ReactDOM.render(
@@ -18,6 +18,20 @@
 					return <h2 key={i}>hello , {name}!</h2>  
 					//使用react循环或者遍历时，需要在标签里加上key={},否则报错
 				})
+			}
+			</div>,
+			document.getElementById('example1')
+		);
+	</script>
+
+	<div id="example2"></div>
+	<script type="text/babel">
+		var name = ['kitty','mary','king'];
+		ReactDOM.render(
+			<div>
+			{ //使用js函数时，用{}包着
+				name.map((name,i)=>{return<h2 key={i}>hello , {name}!</h2>;}) //这是ECMA6的函数缩写形式，map函数缩写,可以对比上面例子
+
 			}
 			</div>,
 			document.getElementById('example2')
@@ -30,7 +44,7 @@
 			<h2>world!</h2>,
 		];
 		ReactDOM.render(
-			<div>{arr}</div>,
+			<div>{arr}</div>,    //会报错，因为{}自动调用map函数，使用map函数必须在标签内加入key={i}唯一标识
 			document.getElementById('example3')
 		);
 	</script>

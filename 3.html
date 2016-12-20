@@ -10,7 +10,7 @@
 <body>
 	<div id="example4"></div>
 	<script type="text/babel">
-		var HelloMessage = React.createClass({         
+		let HelloMessage = React.createClass({              //let是ECMA6的声明变量，用它所声明的变量， 只在let命令所在的代码块内有效。  
 			render : function(){   							//在渲染的时候放回一个标签
 				return <h1>hello {this.props.name}</h1>;    //this.props.name 获取标签的属性
 			}
@@ -23,21 +23,20 @@
 	</script>
 	<div id="ex1"></div>
 	<script type="text/babel">
-		var HelloWorld = React.createClass({
+		let HelloWorld = React.createClass({
 			render : function(){
 				return <h2>hello {this.props.name1} , {this.props.name2}</h2>;  //同时获取两个标签的属性
 			}
 		})
 
-		var props = {
+		let props = {
 			name1 : '赵一',
 			name2 : '李四',
 		};
 		ReactDOM.render(
-			<HelloWorld {...props} />,
+			<HelloWorld {...props} />,   //  ...是ECMA6的扩展操作符，可以直接展开数组或者类数组
 			document.getElementById('ex1')
 		);
 	</script>
-	<div id="ex2"></div>
 </body>
 </html>
