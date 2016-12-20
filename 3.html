@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/react.js"></script>
+	<script src="js/react-dom.js"></script>
+	<script src="js/browser.min.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<div id="example4"></div>
+	<script type="text/babel">
+		var HelloMessage = React.createClass({         
+			render : function(){   							//在渲染的时候放回一个标签
+				return <h1>hello {this.props.name}</h1>;    //this.props.name 获取标签的属性
+			}
+		});
+
+		ReactDOM.render(
+			<HelloMessage name="天气"  />,                  //把HelloMessage作为标签插入到元素中
+			document.getElementById('example4')
+		);
+	</script>
+	<div id="ex1"></div>
+	<script type="text/babel">
+		var HelloWorld = React.createClass({
+			render : function(){
+				return <h2>hello {this.props.name1} , {this.props.name2}</h2>;  //同时获取两个标签的属性
+			}
+		})
+
+		var props = {
+			name1 : '赵一',
+			name2 : '李四',
+		};
+		ReactDOM.render(
+			<HelloWorld {...props} />,
+			document.getElementById('ex1')
+		);
+	</script>
+	<div id="ex2"></div>
+</body>
+</html>

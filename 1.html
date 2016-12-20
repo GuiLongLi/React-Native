@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/react.js"></script>  
+	<script src="js/react-dom.js"></script> 
+	<!-- 原本的 react package 被拆分为 react 及 react-dom 两个 package。其中 react package 中包含 React.createElement、 .createClass、 .Component， .PropTypes， .Children 这些 API，而 react-dom package 中包含 ReactDOM.render、 .unmountComponentAtNode、 .findDOMNode。 -->
+
+	<script src="js/browser.min.js"></script>  <!-- 使浏览器支持babel，你可以使用ECMAscript2015编码(javascript下一代标准) .js、.jsx、.es和.es6 -->
+</head>
+<body>
+	<div id="example1"></div>
+	<script type="text/babel"> /*  jsx语法 等于 1.js里的js语法 */
+	
+		ReactDOM.render(
+			<ul>
+				<li>First Text Content</li>
+				<li>Second Text Content</li>
+				<li id="test">Third Text Content</li>
+			</ul>,
+			document.getElementById('example1')
+		);
+		ReactDOM.render(
+			<h2>lesson one</h2>,
+			document.getElementById('test')
+		);
+	</script>
+	<!-- // <script src="jsx/1.js"></script>  -->
+</body>
+</html>
